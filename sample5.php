@@ -85,7 +85,7 @@
 			position: absolute;
 /*    		top: 20%;*/
     		transform: translateX(-50%);
-    		width: 400px;
+    		width: 1000px;
 /*    		background-color: #212121 !important;*/
 		}
 
@@ -107,6 +107,16 @@
             margin-left: 1.5rem;
             margin-right: 1.5rem;
         }
+
+        .card-image{
+/*        	width: 700px !important;*/
+        	margin: auto auto 50px auto !important;
+
+        }
+
+/*        .card-image:hover{
+        	transform: scale(2) !important;
+        }*/
 
         .details{
         	text-align: justify;
@@ -227,6 +237,18 @@
 			animation: bounceIn 0.7s ease-out;
 		}
 
+		.card-image{
+/*			height: 300px;*/
+			width: 300px;
+			border-radius: 15px !important;
+			padding-right: 10px;
+		}
+
+		.orig-img{
+			display: flex;
+			flex-wrap: wrap;
+			
+		}
 
 	</style>
 
@@ -241,19 +263,27 @@
 		      <div class="card ">
 		        <div class="card-content white-text ">
 		          <span class="card-title amber-text center">Main Artstyle</span>
-		          <a class="card-image waves-effect waves-block" href="card-content.php">
-                    <img class="activator" src="./images/Card-1.png" >
-                  </a>
-		          <p class="details">- Anime like Illustration, fully rendered with minimal lighting details (plus plain colored bg of your choice).</p>
-		      			<div class='line-wh'></div>
-		      		<div class="button-price center">
-		      			<a href="https://www.facebook.com/photo?fbid=176831492040752&set=pcb.176831962040705" class="btn  amber-text waves-effect waves-yellow center">Price
-                		</a>
-		      		</div>
-		      		<div class="buttons-sample center">
-		      			<a href="sample3.php" class="btn amber-text waves-effect waves-yellow center">Art Samples
-                		</a>
-		      		</div>
+					<div class="orig-img">
+					<?php
+						include('Admin\assets\config\db.php');
+
+						$originalArtQuery = "SELECT `img`, `list_style` FROM `card` WHERE `list_style` = 'Cute Aesthetic Style'";
+						$originalArtResult = mysqli_query($con, $originalArtQuery);
+
+						if (mysqli_num_rows($originalArtResult) > 0) {
+							while ($originalArtRow = mysqli_fetch_assoc($originalArtResult)) {
+								$originalArtImg = $originalArtRow['img'];
+								$location = 'Admin/upload/' . $originalArtImg;
+
+								echo '<img class="card-image  materialboxed" src="' . $location . '" >';
+							}
+						} else {
+							echo "No Cute Aesthetic Style records";
+						}
+
+						mysqli_close($con);
+                    ?>
+					</div>
 		      		<div class="buttons-bc center">
 		      			<a href="index.php" class="amber-text back left">◃ Back
                 		</a>
@@ -272,6 +302,9 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script>
+    	$(document).ready(function(){
+    		$('.materialboxed').materialbox();
+ 		});
 
     	function pashPash() {
     	    var temp = document.getElementById("pass");

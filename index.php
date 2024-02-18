@@ -43,7 +43,7 @@
 
               <div class="row col s12 m6 l4">
                 <div class="card amber hover-reveal">
-                  <a class="card-image waves-effect waves-block" href="card-content.php">
+                  <a class="card-image waves-effect waves-block" href="card-content2.php">
                     <img class="activator" src="./images/Card-2.png" >
                   </a>
                   <div class="card-content activator">
@@ -56,7 +56,7 @@
 
               <div class="row col s12 m6 l4">
                 <div class="card amber hover-reveal">
-                  <a class="card-image waves-effect waves-block" href="card-content.php">
+                  <a class="card-image waves-effect waves-block" href="card-content3.php">
                     <img class="activator" src="./images/Card-4.png" >
                   </a>
                   <div class="card-content activator">
@@ -69,7 +69,7 @@
 
               <div class="row col s12 m6 l4 offset-l2">
                 <div class="card amber hover-reveal">
-                  <a class="card-image waves-effect waves-block" href="card-content.php">
+                  <a class="card-image waves-effect waves-block" href="card-content4.php">
                     <img class="activator" src="./images/Card-3.png" >
                   </a>
                   <div class="card-content activator">
@@ -82,7 +82,7 @@
 
               <div class="row col s12 m6 l4 offset-m3">
                 <div class="card amber hover-reveal">
-                  <a class="card-image waves-effect waves-block" href="card-content.php">
+                  <a class="card-image waves-effect waves-block" href="card-content5.php">
                     <img class="activator" src="./images/Card-5.png" >
                   </a>
                   <div class="card-content activator">
